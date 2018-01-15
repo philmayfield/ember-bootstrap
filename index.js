@@ -74,6 +74,8 @@ module.exports = {
 
     this.app = app;
 
+	console.log('this.app', this.app);
+
     let options =Object.assign({}, defaultOptions, app.options['ember-bootstrap']);
     if (process.env.BOOTSTRAPVERSION) {
       // override bootstrapVersion config when environment variable is set
@@ -81,8 +83,8 @@ module.exports = {
     }
     this.bootstrapOptions = options;
 
-    this.validateDependencies();
-    this.preprocessor = this.findPreprocessor();
+    // this.validateDependencies();
+    // this.preprocessor = this.findPreprocessor();
 
     // static Bootstrap CSS is mapped to vendor tree, independent of BS version, so import from there
     let vendorPath = path.join('vendor', 'ember-bootstrap');
